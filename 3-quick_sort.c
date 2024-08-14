@@ -8,12 +8,12 @@
  */
 void swap(int *a, int *b)
 {
-    if (*a != *b)  /* Only swap if the elements are different */
-    {
-        int temp = *a;
-        *a = *b;
-        *b = temp;
-    }
+	if (*a != *b)  /* Only swap if the elements are different */
+	{
+		int temp = *a;
+		*a = *b;
+		*b = temp;
+	}
 }
 
 /**
@@ -27,28 +27,28 @@ void swap(int *a, int *b)
  */
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
-    int pivot = array[high];
-    int i = low - 1;
-    int j;
+	int pivot = array[high];
+	int i = low - 1;
+	int j;
 
-    for (j = low; j < high; j++)
-    {
-        if (array[j] < pivot)
-        {
-            i++;
-            if (i != j && array[i] != array[j])
-            {
-                swap(&array[i], &array[j]);
-                print_array(array, size);
-            }
-        }
-    }
-    if (i + 1 != high && array[i + 1] != array[high])
-    {
-        swap(&array[i + 1], &array[high]);
-        print_array(array, size);
-    }
-    return (i + 1);
+	for (j = low; j < high; j++)
+	{
+		if (array[j] < pivot)
+		{
+			i++;
+			if (i != j && array[i] != array[j])
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
+		}
+	}
+	if (i + 1 != high && array[i + 1] != array[high])
+	{
+		swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
+	return (i + 1);
 }
 
 /**
@@ -60,12 +60,12 @@ int lomuto_partition(int *array, int low, int high, size_t size)
  */
 void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
-    if (low < high)
-    {
-        int pivot_index = lomuto_partition(array, low, high, size);
-        quick_sort_recursive(array, low, pivot_index - 1, size);
-        quick_sort_recursive(array, pivot_index + 1, high, size);
-    }
+	if (low < high)
+	{
+		int pivot_index = lomuto_partition(array, low, high, size);
+		quick_sort_recursive(array, low, pivot_index - 1, size);
+		quick_sort_recursive(array, pivot_index + 1, high, size);
+	}
 }
 
 /**
@@ -75,9 +75,9 @@ void quick_sort_recursive(int *array, int low, int high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    quick_sort_recursive(array, 0, size - 1, size);
+	quick_sort_recursive(array, 0, size - 1, size);
 }
 
