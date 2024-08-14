@@ -8,9 +8,12 @@
  */
 void swap(int *a, int *b)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+    if (*a != *b)  /* Only swap if the elements are different */
+    {
+        int temp = *a;
+        *a = *b;
+        *b = temp;
+    }
 }
 
 /**
@@ -33,18 +36,15 @@ int lomuto_partition(int *array, int low, int high, size_t size)
         if (array[j] < pivot)
         {
             i++;
-            if (i != j)
-            {
-                swap(&array[i], &array[j]);
+            swap(&array[i], &array[j]);
+            if (i != j) /* Print only if a swap actually occurred */
                 print_array(array, size);
-            }
         }
     }
-    if (i + 1 != high)
-    {
-        swap(&array[i + 1], &array[high]);
+    swap(&array[i + 1], &array[high]);
+    if (i + 1 != high) /* Print only if a swap actually occurred */
         print_array(array, size);
-    }
+    
     return (i + 1);
 }
 
