@@ -3,12 +3,7 @@
 
 #include <stddef.h>
 
-/**
- * struct listint_s - Doubly linked list node
- * @n: Integer stored in the node
- * @prev: Pointer to the previous element of the list
- * @next: Pointer to the next element of the list
- */
+/* Definition of the doubly linked list structure */
 typedef struct listint_s
 {
     int n;
@@ -16,10 +11,20 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
-void print_list(const listint_t *list);
-void insertion_sort_list(listint_t **list);
+/* Function to print an array of integers */
 void print_array(const int *array, size_t size);
+
+/* Function to print a doubly linked list */
+void print_list(const listint_t *list);
+
+/* Function to perform insertion sort on a doubly linked list */
+void insertion_sort_list(listint_t **list);
+
+/* Function to perform selection sort on an array of integers */
 void selection_sort(int *array, size_t size);
+
+/* Function to perform quick sort on an array of integers */
+void quick_sort(int *array, size_t size);
 
 #endif /* SORT_H */
 
