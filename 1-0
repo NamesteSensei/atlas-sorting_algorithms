@@ -1,0 +1,4 @@
+O(n)          /* Best case: List is already sorted */
+O(n^2)        /* Average case: Random order of elements */
+O(n^2)        /* Worst case: List is sorted in reverse order */
+
