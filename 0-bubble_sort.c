@@ -8,7 +8,7 @@
  * Description: This function sorts an array by repeatedly comparing adjacent
  * elements and swapping them if they are in the wrong order. After each pass,
  * the next largest element is placed in its correct position.
- */
+ **/
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
