@@ -10,6 +10,8 @@ typedef struct listint_s
     struct listint_s *prev;
     struct listint_s *next;
 } listint_t;
+/* Function to preformv bubble sort */
+void bubble_sort(int *array, size_t size0);
 
 /* Function to print an array of integers */
 void print_array(const int *array, size_t size);
